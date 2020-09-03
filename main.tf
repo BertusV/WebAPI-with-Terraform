@@ -6,6 +6,7 @@ provider "azurerm" {
 
 terraform {
     backend "azurerm" {
+        subscription_id      = "011b3092-557e-4de1-b41e-5afb7d759fef"
         resource_group_name  = "BV_Storage_Resource_Group"
         storage_account_name = "bvstorageaccount"
         container_name       = "terraformstates"
