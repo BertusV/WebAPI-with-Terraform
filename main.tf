@@ -4,6 +4,15 @@ provider "azurerm" {
 }
 
 
+terraform {
+    backend "azurerm" {
+        resource_group_name  = "BV_Storage_Resource_Group"
+        storage_account_name = "bvstorageaccount"
+        container_name       = "terraformstates"
+        key                  = "terraform.tfstate"
+    }
+}
+
 resource "azurerm_resource_group" "tf_test" {
     name = "BVTerraformRG"
     location = "Australia East"
